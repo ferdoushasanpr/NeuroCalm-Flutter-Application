@@ -60,6 +60,9 @@ flutter:
   assets:
     - assets/images/welcome-page.png
     - assets/images/login-page-vector.png
+    - assets/images/basics-vector.png
+    - assets/images/relaxation-vector.png
+    - assets/images/silent-moon.png
     - assets/icons/facebook.png
     - assets/icons/google.png
 

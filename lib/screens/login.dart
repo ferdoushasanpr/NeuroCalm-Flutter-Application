@@ -132,15 +132,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 24),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return LoginScreen();
-                          },
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromRGBO(142, 151, 253, 1),
                     ),
