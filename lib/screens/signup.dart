@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:neurocalm/screens/signup.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +36,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 32),
               Text(
-                "Welcome Back!",
+                "Create your account.",
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -41,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 32),
+              SizedBox(height: 48),
               TextButton.icon(
                 style: TextButton.styleFrom(
                   backgroundColor: Color.fromRGBO(117, 131, 202, 1),
@@ -84,7 +89,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 30),
               Text(
-                "OR LOG IN WITH EMAIL",
+                "OR SIGN UP WITH EMAIL",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -93,29 +98,74 @@ class LoginScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 30),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Email address",
-                  filled: true,
-                  fillColor: Color.fromRGBO(242, 243, 247, 1),
-                  hintStyle: TextStyle(color: Color.fromRGBO(161, 164, 178, 1)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-              SizedBox(height: 16),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  filled: true,
-                  fillColor: Color.fromRGBO(242, 243, 247, 1),
-                  hintStyle: TextStyle(color: Color.fromRGBO(161, 164, 178, 1)),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide.none,
-                  ),
+              Expanded(
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Name",
+                        filled: true,
+                        fillColor: Color.fromRGBO(242, 243, 247, 1),
+                        hintStyle: TextStyle(
+                          color: Color.fromRGBO(161, 164, 178, 1),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Email address",
+                        filled: true,
+                        fillColor: Color.fromRGBO(242, 243, 247, 1),
+                        hintStyle: TextStyle(
+                          color: Color.fromRGBO(161, 164, 178, 1),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        filled: true,
+                        fillColor: Color.fromRGBO(242, 243, 247, 1),
+                        hintStyle: TextStyle(
+                          color: Color.fromRGBO(161, 164, 178, 1),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "I have read the Privacy Policy",
+                          style: TextStyle(
+                            color: Color.fromRGBO(161, 164, 178, 1),
+                          ),
+                        ),
+                        Checkbox(
+                          value: isChecked,
+                          onChanged: (value) {
+                            setState(() {
+                              isChecked = value ?? false;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 24),
@@ -124,7 +174,7 @@ class LoginScreen extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return LoginScreen();
+                        return SignupScreen();
                       },
                     ),
                   );
@@ -138,40 +188,12 @@ class LoginScreen extends StatelessWidget {
                     vertical: 18.0,
                   ),
                   child: Text(
-                    'LOG IN',
+                    'GET STARTED',
                     style: TextStyle(color: Color.fromRGBO(246, 241, 251, 1)),
                   ),
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color.fromRGBO(63, 65, 78, 1),
-                  ),
-                ),
-              ),
-              SizedBox(height: 32),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SignupScreen();
-                      },
-                    ),
-                  );
-                },
-                child: Text(
-                  "DON'T HAVE AN ACCOUNT? SIGN UP",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color.fromRGBO(63, 65, 78, 1),
-                  ),
-                ),
-              ),
+              SizedBox(height: 24),
             ],
           ),
         ),

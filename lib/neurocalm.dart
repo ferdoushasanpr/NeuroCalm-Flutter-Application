@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neurocalm/screens/login.dart';
+import 'package:neurocalm/screens/signup.dart';
 
 class Neurocalm extends StatelessWidget {
   const Neurocalm({super.key});
@@ -43,7 +44,15 @@ class Neurocalm extends StatelessWidget {
                 ),
                 SizedBox(height: 32),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SignupScreen();
+                        },
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(142, 151, 253, 1),
                   ),
