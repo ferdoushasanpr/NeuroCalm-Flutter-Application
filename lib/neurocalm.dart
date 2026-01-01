@@ -10,9 +10,9 @@ class Neurocalm extends StatelessWidget {
       backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset('assets/images/welcome-page.png'),
-          SizedBox(height: 32),
           Container(
             padding: EdgeInsets.all(30.0),
             child: Column(
@@ -41,17 +41,9 @@ class Neurocalm extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 32),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginScreen();
-                        },
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromRGBO(142, 151, 253, 1),
                   ),
@@ -61,18 +53,26 @@ class Neurocalm extends StatelessWidget {
                       vertical: 18.0,
                     ),
                     child: Text(
-                      'Get Started',
+                      'SIGN UP',
                       style: TextStyle(color: Color.fromRGBO(246, 241, 251, 1)),
                     ),
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  },
                   child: Text(
                     "ALREADY HAVE AN ACCOUNT? LOG IN",
                     style: TextStyle(
                       fontSize: 14,
-                      color: Color.fromRGBO(63, 65, 78, 1),
+                      color: Color.fromRGBO(161, 164, 178, 1),
                     ),
                   ),
                 ),
