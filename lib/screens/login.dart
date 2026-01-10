@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:neurocalm/screens/layout_screen.dart';
 import 'package:neurocalm/screens/signup.dart';
-import 'package:neurocalm/screens/userhome.dart';
+import 'package:neurocalm/screens/home.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -137,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return UserHomeScreen();
+                            return LayoutScreen();
                           },
                         ),
                       );
