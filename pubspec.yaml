@@ -62,9 +62,18 @@ flutter:
     - assets/images/login-page-vector.png
     - assets/images/basics-vector.png
     - assets/images/relaxation-vector.png
+    - assets/images/daily-thought-vector.png
     - assets/images/silent-moon.png
+    - assets/images/happiness.png
+    - assets/images/focus.png
     - assets/icons/facebook.png
     - assets/icons/google.png
+    - assets/icons/play.png
+    - assets/icons/home-icon.png
+    - assets/icons/meditate-icon.png
+    - assets/icons/moon-icon.png
+    - assets/icons/music-icon.png
+    - assets/icons/user-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
