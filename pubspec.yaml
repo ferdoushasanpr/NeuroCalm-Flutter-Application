@@ -66,6 +66,9 @@ flutter:
     - assets/images/silent-moon.png
     - assets/images/happiness.png
     - assets/images/focus.png
+    - assets/images/daily-calm.png
+    - assets/images/scene-a.png
+    - assets/images/scene-b.png
     - assets/icons/facebook.png
     - assets/icons/google.png
     - assets/icons/play.png
@@ -74,6 +77,11 @@ flutter:
     - assets/icons/moon-icon.png
     - assets/icons/music-icon.png
     - assets/icons/user-icon.png
+    - assets/icons/all-icon.png
+    - assets/icons/kids-icon.png
+    - assets/icons/anxious-icon.png
+    - assets/icons/love-icon.png
+    - assets/icons/sleep-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

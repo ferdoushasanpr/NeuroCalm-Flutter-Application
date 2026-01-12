@@ -4,13 +4,13 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem({
     super.key,
     required this.label,
-    required this.icon,
+    required this.iconPath,
     required this.color,
     required this.isActive,
   });
 
   final String label;
-  final IconData icon;
+  final String iconPath;
   final Color color;
   final bool isActive;
 
@@ -20,23 +20,24 @@ class CategoryItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 15),
       child: Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: isActive ? color : Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Icon(
-              icon,
-              color: isActive ? Colors.white : Colors.grey,
-              size: 28,
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isActive ? color : Color.fromRGBO(160, 163, 177, 1),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: ImageIcon(AssetImage(iconPath), color: Colors.white),
             ),
           ),
           const SizedBox(height: 8),
           Text(
             label,
             style: TextStyle(
-              color: isActive ? Colors.black : Colors.grey,
+              color: isActive
+                  ? Color.fromRGBO(63, 65, 78, 1)
+                  : Color.fromRGBO(161, 164, 178, 1),
               fontWeight: FontWeight.w500,
             ),
           ),
