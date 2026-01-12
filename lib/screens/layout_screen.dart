@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neurocalm/screens/home.dart';
 import 'package:neurocalm/screens/meditate.dart';
+import 'package:neurocalm/screens/music.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
@@ -11,7 +12,7 @@ class LayoutScreen extends StatefulWidget {
 
 class _LayoutScreenState extends State<LayoutScreen> {
   var _currentScreen = 0;
-  final List screens = [HomeScreen(), MeditateScreen()];
+  final List screens = [HomeScreen(), MeditateScreen(), Music()];
 
   @override
   Widget build(BuildContext context) {
