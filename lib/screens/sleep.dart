@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:neurocalm/widgets/category_item.dart';
+import 'package:neurocalm/widgets/mainfeaturedcard.dart';
 
 class SleepScreen extends StatelessWidget {
   const SleepScreen({super.key});
@@ -9,9 +11,9 @@ class SleepScreen extends StatelessWidget {
     const secondaryBlue = Color(0xFF1B2C5B);
     const accentLavender = Color(0xFF8E97FD);
 
-    return Scaffold(
-      backgroundColor: primaryBlue,
-      body: SafeArea(
+    return Container(
+      decoration: BoxDecoration(color: primaryBlue),
+      child: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -37,23 +39,40 @@ class SleepScreen extends StatelessWidget {
               const SizedBox(height: 30),
 
               // Category Horizontal List
-              SizedBox(
-                height: 100,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
                     CategoryItem(
-                      icon: Icons.grid_view_rounded,
                       label: 'All',
-                      isSelected: true,
+                      iconPath: "assets/icons/all-icon.png",
+                      color: const Color(0xFF8E97FD),
+                      isActive: true,
                     ),
-                    CategoryItem(icon: Icons.favorite_border, label: 'My'),
                     CategoryItem(
-                      icon: Icons.sentiment_dissatisfied,
-                      label: 'Anxious',
+                      label: 'My',
+                      iconPath: "assets/icons/love-icon.png",
+                      color: Colors.grey.shade400,
+                      isActive: false,
                     ),
-                    CategoryItem(icon: Icons.nightlight_round, label: 'Sleep'),
-                    CategoryItem(icon: Icons.child_care, label: 'Kids'),
+                    CategoryItem(
+                      label: 'Anxious',
+                      iconPath: "assets/icons/anxious-icon.png",
+                      color: Colors.grey.shade400,
+                      isActive: false,
+                    ),
+                    CategoryItem(
+                      label: 'Sleep',
+                      iconPath: "assets/icons/sleep-icon.png",
+                      color: Colors.grey.shade400,
+                      isActive: false,
+                    ),
+                    CategoryItem(
+                      label: 'Kids',
+                      iconPath: "assets/icons/kids-icon.png",
+                      color: Colors.grey.shade400,
+                      isActive: false,
+                    ),
                   ],
                 ),
               ),
@@ -91,107 +110,6 @@ class SleepScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-// Sub-widget for the Category Icons
-class CategoryItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final bool isSelected;
-
-  const CategoryItem({
-    super.key,
-    required this.icon,
-    required this.label,
-    this.isSelected = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              color: isSelected
-                  ? const Color(0xFF8E97FD)
-                  : const Color(0xFF586894),
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Icon(icon, color: Colors.white),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            label,
-            style: const TextStyle(color: Colors.white, fontSize: 14),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-// Sub-widget for the Large Featured Card
-class MainFeaturedCard extends StatelessWidget {
-  const MainFeaturedCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 200,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: const LinearGradient(
-          colors: [Color(0xFF5A68D8), Color(0xFF03174C)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Stack(
-        children: [
-          const Positioned(
-            top: 15,
-            left: 15,
-            child: Icon(Icons.lock, color: Colors.white70, size: 20),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'The Ocean Moon',
-                  style: TextStyle(
-                    color: Color(0xFFFFE59E),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Serif',
-                  ),
-                ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Non-stop 8-hour mixes of our\nmost popular sleep audio',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white, fontSize: 13),
-                ),
-                const SizedBox(height: 15),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                  ),
-                  child: const Text('START'),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
